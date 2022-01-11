@@ -76,7 +76,7 @@ async fn main() {
     let routes = get_events.or(add_event).with(cors).with(warp::trace::request()).recover(error::return_error);
 
     warp::serve(routes)
-        .run(([127, 0, 0, 1], 3030))
+        .run(([0, 0, 0, 0], 8088))
         .await;
     
 }
